@@ -1,13 +1,3 @@
-pip install "zenml["server"]"
-zenml up --blocking
-zenml integration install mlflow -y
-zenml experiment-tracker register mlflow_tracker --flavor=mlflow
-
-
-
-# 
-
-
 # Predicting how a customer will feel about a product before they even ordered it
 
 **Problem statement**: For a given customer's historical data, we are tasked to predict the review score for the next order or purchase.(https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
@@ -23,6 +13,7 @@ zenml integration install mlflow -y
 Run zenml
 ```
 zenml up --blocking
+
 zenml experiment-tracker register mlflow_tracker --flavor=mlflow [register mlflow tracker]
 zenml stack register mlflow_stack -a default -o default -d mlflow -e mlflow_tracker --set
 zenml stack describe [check stack]
@@ -45,10 +36,6 @@ python run_pipeline.py
 ```
 python run_deployment.py
 ```
-
-
-
-
 
 ### Training Pipeline
 
